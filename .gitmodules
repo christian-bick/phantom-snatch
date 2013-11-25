@@ -7,3 +7,6 @@
 [submodule "nodejs"]
 	path = nodejs
 	url = https://github.com/mdxp/nodejs-cookbook.git
+[submodule "yum"]
+	path = yum
+	url = https://github.com/opscode-cookbooks/yum.git

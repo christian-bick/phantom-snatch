@@ -31,7 +31,7 @@ directory "/home/phantomjs" do
   action :create
 end
 
-file "snapshot-script.js" do
+cookbook_file "snapshot-script.js" do
   owner "phantomjs"
   group "phantomjs"
   path "/home/phantomjs/snapshot-script.js"

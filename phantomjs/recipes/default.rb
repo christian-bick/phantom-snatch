@@ -23,7 +23,7 @@ end
 file "snapshot-script.js" do
   owner "phantomjs"
   group "phantomjs"
-  path "/home/phantomjs"
+  path "/home/phantomjs/snapshot-script.js"
   mode "0755"
   action :create
 end

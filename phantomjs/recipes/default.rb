@@ -20,7 +20,7 @@ group "phantomjs" do
   action :create
 end
 
-directory "/home/phatomjs" do
+directory "/home/phantomjs" do
   owner "phantomjs"
   group "phantomjs"
   mode "0755"

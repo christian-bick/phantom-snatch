@@ -57,7 +57,7 @@ end
 
 service "phantomjs" do 
   supports :start => true, :stop => true, :restart => true
-  start_command "nohup phantomjs --disk-cache=false --ignore-ssl-errors=true snapshot-script.js 80 https://bitsuppliers.com/"
+  start_command "nohup phantomjs --disk-cache=false --ignore-ssl-errors=true /home/phantomjs/snapshot-script.js 80 https://bitsuppliers.com/"
   stop_command "killall phantomjs"
   action :start
 end

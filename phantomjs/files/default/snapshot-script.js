@@ -1,8 +1,8 @@
 var system = require('system');
 
 if (system.args.length < 3) {
-    console.log('Missing arguments.');
-    phantom.exit();
+  console.log('Missing arguments.');
+  phantom.exit();
 }
 
 var server = require('webserver').create();
@@ -72,19 +72,20 @@ server.listen(port, function (request, response) {
   var route = parse_qs(request.url)._escaped_fragment_;
   if (!route) {
     response.statusCode = 400;
-		response.write('Only requests with search parameter "_escaped_fragment_" accepted', 'utf-8');
+    response.write('Only requests with search parameter "_escaped_fragment_" accepted', 'utf-8');
     response.close();
+    return;
   }
   
   var url = urlPrefix
       + request.url.slice(1, request.url.indexOf('?'))
       + '#!' + decodeURIComponent(route);
       
-	var respond = function(status, content) {
+    var respond = function(status, content) {
     response.statusCode = status;
-		response.setHeader('Content-Type', 'text/html; utf-8');
-		response.setHeader('Content-Length', -1);
-		response.write(content, 'utf-8');
+    response.setHeader('Content-Type', 'text/html; utf-8');
+    response.setHeader('Content-Length', -1);
+    response.write(content, 'utf-8');
     response.close();
   }
   

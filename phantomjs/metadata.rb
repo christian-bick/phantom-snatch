@@ -1,1 +1,2 @@
 depends "nodejs"
+depends "authbind"

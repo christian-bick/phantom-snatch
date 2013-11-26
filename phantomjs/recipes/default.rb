@@ -59,7 +59,7 @@ service "phantomjs" do
   supports :start => true, :stop => true, :restart => true
   start_command "phantomjs --disk-cache=false --ignore-ssl-errors=true /home/phantomjs/snapshot-script.js 80 https://bitsuppliers.com/"
   stop_command "killall phantomjs"
-  provilde Chef::Provider::Service::Upstart
+  provider Chef::Provider::Service::Upstart
   action :start
 end
 

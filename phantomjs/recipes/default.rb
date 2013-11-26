@@ -60,7 +60,6 @@ end
 service "phantomjs" do 
   provider Chef::Provider::Service::Upstart
   supports :restart => true, :start => true, :stop => true
-  subscribes :restart
 end
 
 # Puts the PhantomJS service definition into /etc/init

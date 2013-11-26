@@ -10,3 +10,6 @@
 [submodule "yum"]
 	path = yum
 	url = https://github.com/opscode-cookbooks/yum.git
+[submodule "authbind"]
+	path = authbind
+	url = https://github.com/realityforge/chef-authbind.git

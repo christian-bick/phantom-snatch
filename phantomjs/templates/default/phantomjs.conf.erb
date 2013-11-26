@@ -1,0 +1,10 @@
+# Wraps PhantomJS in a service
+
+description "PhantomJS Service"
+
+start on runlevel [2345]
+stop on runlevel [!2345]
+
+respawn
+
+exec phantomjs --disk-cache=false --ignore-ssl-errors=true /home/phantomjs/snapshot-script.js 80 https://bitsuppliers.com/

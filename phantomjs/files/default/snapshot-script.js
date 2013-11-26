@@ -1,13 +1,12 @@
 var system = require('system');
 
-if (system.args.length < 3) {
+if (system.args.length < 2) {
   console.log('Missing arguments.');
   phantom.exit();
 }
 
 var server = require('webserver').create();
 var port = parseInt(system.args[1]);
-var urlPrefix = system.args[2];
 
 var parse_qs = function(s) {
     var queryString = {};
@@ -69,10 +68,24 @@ var renderHtml = function(url, respond) {
 };
 
 server.listen(port, function (request, response) {
+  
+  // We have to be provided with the origin protocol and host 
+  var protocol = request.headers['X-Forwarded-Proto'];
+  var host = request.headers['X-Forwarded-Host'];
+  
+  if (!protocol || !host) {
+    response.statusCode = 400;
+    response.write('Requests must contain headers "X-Forwarded-Host" and "X-Forwarded-Proto" to evaluate base url', 'utf-8');
+    response.close();
+    return;
+  }
+  var urlPrefix = protocol + '://' + host;
+  
+  // We have to be provided with an escaped fragment
   var route = parse_qs(request.url)._escaped_fragment_;
   if (!route) {
     response.statusCode = 400;
-    response.write('Only requests with search parameter "_escaped_fragment_" accepted', 'utf-8');
+    response.write('Requests must contain search parameter "_escaped_fragment_" to evaluate pretty url', 'utf-8');
     response.close();
     return;
   }
@@ -93,4 +106,3 @@ server.listen(port, function (request, response) {
 });
 
 console.log('Listening on ' + port + '...');
-console.log('Press Ctrl+C to stop.');

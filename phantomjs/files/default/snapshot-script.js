@@ -83,7 +83,7 @@ server.listen(port, function (request, response) {
       
     var respond = function(status, content) {
     response.statusCode = status;
-    response.setHeader('Content-Type', 'text/html; utf-8');
+    response.setHeader('Content-Type', 'text/html; charset=utf-8');
     response.setHeader('Content-Length', -1);
     response.write(content, 'utf-8');
     response.close();

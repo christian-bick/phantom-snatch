@@ -56,6 +56,13 @@ authbind_port "AuthBind PhantomJS Port 80" do
   group 'phantomjs'
 end
 
+# Creates the PhantomJS service resource
+service "phantomjs" do 
+  provider Chef::Provider::Service::Upstart
+  supports :restart => true, :start => true, :stop => true
+  subscribes :restart
+end
+
 # Puts the PhantomJS service definition into /etc/init
 template "phantomjs.conf" do
   path "/etc/init/phantomjs.conf"
@@ -67,6 +74,5 @@ template "phantomjs.conf" do
 end
 
 service "phantomjs" do 
-  provider Chef::Provider::Service::Upstart
   action [:enable, :start]
 end

@@ -20,6 +20,13 @@ group "phantomjs" do
   action :create
 end
 
+directory "/home/phatomjs" do
+  owner "phantomjs"
+  group "phantomjs"
+  mode "0755"
+  action :create
+end
+
 file "snapshot-script.js" do
   owner "phantomjs"
   group "phantomjs"

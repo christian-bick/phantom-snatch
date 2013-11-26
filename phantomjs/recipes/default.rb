@@ -1,6 +1,10 @@
 include_recipe "nodejs::install_from_package"
 include_recipe "nodejs::npm"
 
+package "libfontconfig1" do
+  action :install
+end
+
 execute "install phantomjs" do
   command "npm -g install phantomjs"
 end

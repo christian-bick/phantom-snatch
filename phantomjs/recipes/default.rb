@@ -51,6 +51,14 @@ end
 
 # Allows PhantomJS to listen on port 80
 authbind_port "AuthBind PhantomJS Port 80" do
-    port 80
-    user 'phantomjs'
+  port 80
+  user 'phantomjs'
 end
+
+service "phantomjs" do 
+  supports :start => true, :stop => true, :restart => true
+  start_command "nohup phantomjs --disk-cache=false --ignore-ssl-errors=true snapshot-script.js 80 https://bitsuppliers.com/"
+  stop_command "killall phantomjs"
+  action :start
+end
+

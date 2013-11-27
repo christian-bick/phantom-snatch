@@ -117,3 +117,19 @@ The equivalent is possible with Apache (just missing a tested example).
 ### Varnish as snapshot proxy
 
 The equivalent is possible with Varnish (just missing a tested example).
+
+## Performance
+
+Tests have shown a pretty good performance for medium-complex pages. On an AWS micro instance (1 Core, 768 MB RAM) the avarage return time varied between 1-2 seconds. Even better results should be possible with instances dedicated to computing.
+
+There is not yet enough experience yet with larger amounts of load to make final conclusions. But experience so far suggests that you can easily render pages in real time without the need to make screenshots in advance.
+
+This said, it may still be advisable to cache already rendered snapshots on the proxy. Nginx, Apache and Varnish can easily be configured to add caching to their reverse proxy capabilities. This cache can then be prewarmed on deployment or on data changes by just calling the same URL as the crawler would.
+
+## Contribution
+
+Phantom-Snatch is the outcome of a concrete project with a concrete setting. Help us to make helpful for more people by making things configurable that are hard-coded now and by adopting chef recipes to be support more platforms. 
+
+Hot do you do this? Fork Phantom-Snatch and make all changes needed to make it work in your setting. If you stay backward compatible (e.g. by configuration), make a pull request and we will happily merge your changes.
+
+Feedback like "this worked nice on Ubuntu 13.x" is also welcome.

@@ -70,7 +70,7 @@ If you want to take a snapshot of
 
 ``https://my.domain/#!/crawlable``
 
-then you call
+then you can now call
 
 ``http://phantom.snatch.hostname/?_escaped_fragment_=/crawlable``
 
@@ -96,7 +96,7 @@ location / {
 }
 ```
 
-Now, nginx will forward every request to "my.domain" containing an "_escaped_fragment_" query parameter to your snapshot server and return the result to the crawler.
+Now, nginx will forward every request to "my.domain" containing an "\_escaped_fragment_" query parameter to your snapshot server and return the result to the crawler.
 
 ### Apache as snapshot proxy
 

@@ -56,3 +56,9 @@ Requests must contain headers "X-Forwarded-Host" and "X-Forwarded-Proto" to eval
 ``
 Requests must contain headers "X-Forwarded-Host" and "X-Forwarded-Proto" to evaluate base url
 ``
+
+### Optional installation steps
+
+- to prevent (miss-)use by third parties, you may want to setup an IP-restriction or firewall rules for your intance(s)
+- to provide redundancy or scalability, you may want to spawn multiple instances and add a load balancer
+- to not rely on IPs, you may want to assign a hostname for your instance(s) (e.g. snapshots.example.com)

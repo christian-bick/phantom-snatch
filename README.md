@@ -78,6 +78,18 @@ with headers
 
 ``X-Forwarded-Proto: https`` and ``X-Forwarded-Host: my.domain``
 
+## Triggering Snapshot 
+
+Rendering Ajax-Pages has one major pitfall: Because of Ajax's asynchronous behaviour, it is hard for the renderer to say when the page is complete. The most robust and performant way to solve this, is to let the page say "I am ready - you can now take your snapshot".
+
+Phatom-Snatch will assume that a page is ready when it sees the attribute data-status="ready" in the body tag:
+
+```
+<body data-status="ready">
+```
+
+As soon as Phantom-Snatch sees this, it will take the snapshot and write its response. If PhantomJS never sees this, it will take a snapshot after 5 seconds and return it. Because performance has an impact on page rankings, it's higly recommended to signal Phantom-Snatch page-readyness instead of relying on a timout.
+
 ### Nginx as snapshot proxy
 
 You can make handling snapshots transparent if you use nginx to serve content for "my.domain".
@@ -105,4 +117,3 @@ The equivalent is possible with Apache (just missing a tested example).
 ### Varnish as snapshot proxy
 
 The equivalent is possible with Varnish (just missing a tested example).
-

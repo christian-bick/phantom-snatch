@@ -80,7 +80,7 @@ with headers
 
 ### Nginx as snapshot proxy
 
-You can make handling snapshots transparent if you use nginx to serve your content for "my.domain".
+You can make handling snapshots transparent if you use nginx to serve content for "my.domain".
 
 ```nginx
 location / {
@@ -97,3 +97,12 @@ location / {
 ```
 
 Now, nginx will forward every request to "my.domain" containing an "_escaped_fragment_" query parameter to your snapshot server and return the result to the crawler.
+
+### Apache as snapshot proxy
+
+The equivalent is possible with Apache (just missing a tested example).
+
+### Varnish as snapshot proxy
+
+The equivalent is possible with Varnish (just missing a tested example).
+

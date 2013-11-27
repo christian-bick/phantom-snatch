@@ -62,3 +62,38 @@ Requests must contain headers "X-Forwarded-Host" and "X-Forwarded-Proto" to eval
 - to prevent (miss-)use by third parties, you may want to setup an IP-restriction or firewall rules for your intance(s)
 - to provide redundancy or scalability, you may want to spawn multiple instances and add a load balancer
 - to not rely on IPs, you may want to assign a hostname for your instance(s) (e.g. snapshots.example.com)
+
+
+## Taking snapshots
+
+If you want to take a snapshot of
+
+``https://my.domain/#!/crawlable``
+
+then you call
+
+``http://phantom.snatch.hostname/?_escaped_fragment_=/crawlable``
+
+with headers
+
+``X-Forwarded-Proto: https`` and ``X-Forwarded-Host: my.domain``
+
+### Nginx as snapshot proxy
+
+You can make handling snapshots transparent if you use nginx to serve your content for "my.domain".
+
+```nginx
+location / {
+    # Your current configuration for root
+    
+    proxy_set_header X-Forwarded-Proto https; # should be http or https
+    proxy_set_header X-Forwarded-Host $host; # may also be a fixed value
+    
+    if ($args ~ "_escaped_fragment_=(.*)") {
+      proxy_pass http://phantom.snatch.hostname; # Address of your phantom-snatch instance
+    }
+  }
+}
+```
+
+Now, nginx will forward every request to "my.domain" containing an "_escaped_fragment_" query parameter to your snapshot server and return the result to the crawler.

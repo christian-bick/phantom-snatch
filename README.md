@@ -34,7 +34,23 @@ The provisioning has been tested with AWS Opsworks using Ubuntu 12.04 LTS with C
   - instance size: micro
 5. Verify your installation
   - wait until instance status is "online" (pick a coffee)
-  - copy your instance's IP adress into a browser
+  - copy your instance's IP address into a browser
+  - you know that the installation is complete when the server responds the following:
+
+``
+Requests must contain headers "X-Forwarded-Host" and "X-Forwarded-Proto" to evaluate base url
+``
+
+### Using chef solo
+
+0. Provide a vanilla Ubuntu
+1. Install Git and Chef Solo
+2. Clone phantom-snatch ``git clone https://github.com/bitsuppliers/phantom-snatch``
+3. Initialize submodules within phantom-snatch ``cd phantom-snatch`` ``git submodule init``
+4. Run recipe "phantomjs" with Chef Solo
+5. Verify your installation
+  - wait until chef run is complete
+  - copy your instance's IP adress or hostname into a browser
   - you know that the installation is complete when the server responds the following:
 
 ``

@@ -128,7 +128,7 @@ This said, it may still be advisable to cache already rendered snapshots on the 
 
 ## Contribution
 
-Phantom-Snatch is the outcome of a concrete project with a concrete setting. Help us to make helpful for more people by making things configurable that are hard-coded now and by adopting chef recipes to be support more platforms. 
+Phantom-Snatch is the outcome of a concrete project with a concrete setting. Help us to make it helpful for more people by making things configurable that are hard-coded now and by modifying chef recipes to support more platforms.
 
 Hot do you do this? Fork Phantom-Snatch and make all changes needed to make it work in your setting. If you stay backward compatible (e.g. by configuration), make a pull request and we will happily merge your changes.
 

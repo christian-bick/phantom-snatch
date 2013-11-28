@@ -108,7 +108,7 @@ location / {
 }
 ```
 
-Now, nginx will forward every request to "my.domain" containing an "\_escaped_fragment_" query parameter to your snapshot server and return the result to the crawler.
+Now, nginx will forward every request containing an "\_escaped_fragment_" query parameter to your snapshot server and return the result to the crawler.
 
 ### Apache as snapshot proxy
 

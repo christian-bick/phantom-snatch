@@ -122,7 +122,7 @@ The equivalent is possible with Varnish (just missing a tested example).
 
 Tests have shown a pretty good performance for medium-complex pages. On an AWS micro instance (1 Core, 768 MB RAM) the avarage return time varied between 1-2 seconds. Even better results should be possible with instances dedicated to computing.
 
-There is not yet enough experience yet with larger amounts of load to make final conclusions. But experience so far suggests that you can easily render pages in real time without the need to make screenshots in advance.
+There is not enough experience yet with larger amounts of load to make final conclusions. Experience so far suggests that you can easily render pages in real time without the need to make screenshots in advance.
 
 This said, it may still be advisable to cache already rendered snapshots on the proxy. Nginx, Apache and Varnish can easily be configured to add caching to their reverse proxy capabilities. This cache can then be prewarmed on deployment or on data changes by just calling the same URL as the crawler would.
 
@@ -136,10 +136,16 @@ Moreover, feedback like "this worked nice on Ubuntu 13.x" is very welcome.
 
 ## Inspired by
 
-[Year of Moo](http://www.yearofmoo.com/2012/11/angularjs-and-seo.html)
+### Articles
 
-[Angular-SEO](https://github.com/steeve/angular-seo)
+[Year of Moo](http://www.yearofmoo.com/2012/11/angularjs-and-seo.html)
 
 [Backbone Tutorials](http://backbonetutorials.com/seo-for-single-page-apps/)
 
+### Code
+
+[Year of Moo](https://github.com/yearofmoo-articles/AngularJS-SEO-Article)
+
 [HTML-Snapshots](https://github.com/localnerve/html-snapshots)
+
+[Angular-SEO](https://github.com/steeve/angular-seo)

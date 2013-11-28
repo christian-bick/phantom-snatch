@@ -82,7 +82,7 @@ with headers
 
 Rendering Ajax-Pages has one major pitfall: Because of Ajax's asynchronous behaviour, it is hard for the renderer to say when the page is complete. The most robust and performant way to solve this, is to let the page say "I am ready - you can now take your snapshot".
 
-Phatom-Snatch will assume that a page is ready when it sees the attribute data-status="ready" in the body tag:
+Phantom-Snatch will assume that a page is ready when it sees the attribute data-status="ready" in the body tag:
 
 ```
 <body data-status="ready">

@@ -126,10 +126,20 @@ There is not yet enough experience yet with larger amounts of load to make final
 
 This said, it may still be advisable to cache already rendered snapshots on the proxy. Nginx, Apache and Varnish can easily be configured to add caching to their reverse proxy capabilities. This cache can then be prewarmed on deployment or on data changes by just calling the same URL as the crawler would.
 
-## Contribution
+## Contributing
 
-Phantom-Snatch is the outcome of a concrete project with a concrete setting. Help us to make it helpful for more people by making things configurable that are hard-coded now and by modifying chef recipes to support more platforms.
+Phantom-Snatch is the outcome of a concrete project with a concrete setting. Join us to make Phantom-Snatch useful and helpful for as many people as possible by making hard-coded settings configurable and by modifying chef recipes to support more platforms.
 
-Hot do you do this? Fork Phantom-Snatch and make all changes needed to make it work in your setting. If you stay backward compatible (e.g. by configuration), make a pull request and we will happily merge your changes.
+How can you contribute? Fork Phantom-Snatch and make all changes needed to make it work in your environment. Try to stay backward compatible so that we can merge your fork afterwards.
 
-Feedback like "this worked nice on Ubuntu 13.x" is also welcome.
+Moreover, feedback like "this worked nice on Ubuntu 13.x" is very welcome.
+
+## Inspired by
+
+[Year of Moo](http://www.yearofmoo.com/2012/11/angularjs-and-seo.html)
+
+[Angular-SEO](https://github.com/steeve/angular-seo)
+
+[Backbone Tutorials](http://backbonetutorials.com/seo-for-single-page-apps/)
+
+[HTML-Snapshots](https://github.com/localnerve/html-snapshots)

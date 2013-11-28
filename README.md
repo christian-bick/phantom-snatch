@@ -88,7 +88,7 @@ Phantom-Snatch will assume that a page is ready when it sees the attribute data-
 <body data-status="ready">
 ```
 
-As soon as Phantom-Snatch sees this, it will take the snapshot and write its response. If PhantomJS never sees this, it will take a snapshot after 5 seconds and return it. Because performance has an impact on page rankings, it's higly recommended to signal Phantom-Snatch page-readyness instead of relying on a timout.
+As soon as Phantom-Snatch sees this, it will take the snapshot and write its response. If PhantomJS never sees this, it will take a snapshot after 5 seconds and return it. Because performance has an impact on page rankings, it's highly recommended to signal Phantom-Snatch page-readyness instead of relying on a timout.
 
 ### Nginx as snapshot proxy
 

@@ -80,7 +80,7 @@ with headers
 
 ### Controlling snapshots
 
-Rendering Ajax-Pages has one major pitfall: Because of Ajax's asynchronous behaviour, it is hard for the renderer to say when the page is complete. The most robust and performant way to solve this, is to let the page say "I am ready - you can now take your snapshot".
+Rendering Ajax-Pages has one major pitfall: Because of Ajax's asynchronous behaviour, it is hard for the renderer to say when the page is ready for a snapshot. The most robust and performant way to solve this, is to let the page say "I am ready - you can now take your snapshot".
 
 Phantom-Snatch will assume that a page is ready when it sees the attribute data-status="ready" in the body tag:
 

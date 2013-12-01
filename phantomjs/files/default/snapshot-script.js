@@ -90,7 +90,7 @@ server.listen(port, function (request, response) {
     return;
   }
   
-  var url = urlPrefix
+  var url = urlPrefix + '/'
       + request.url.slice(1, request.url.indexOf('?'))
       + '#!' + decodeURIComponent(route);
       

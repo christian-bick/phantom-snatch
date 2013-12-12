@@ -82,7 +82,7 @@ with headers
 
 Rendering Ajax-Pages has one major pitfall: Because of Ajax's asynchronous behaviour, it is hard for the renderer to say when the page is ready for a snapshot. The most robust and performant way to solve this, is to let the page actively signal that it's ready.
 
-You can signal Phantom-Snatch that the page is ready by setting the attribute data-status in the body tag to "ready":
+You can signal Phantom-Snatch that a page is ready by setting the attribute "data-status" of the "body" tag to "ready":
 
 ```
 <body data-status="ready">

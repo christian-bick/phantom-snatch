@@ -88,7 +88,7 @@ You can signal Phantom-Snatch that the page is ready by setting the attribute da
 <body data-status="ready">
 ```
 
-As soon as Phantom-Snatch gets this signal, it will take the snapshot and write its response. If PhantomJS never sees a signal, it will take a snapshot after 5 seconds and return the response. Because performance has an impact on page rankings, it's highly recommended to signal Phantom-Snatch page-readyness instead of relying on a timeout.
+As soon as Phantom-Snatch gets this signal, it will take the snapshot and write its response. If PhantomJS never sees a signal, it will take a snapshot after 5 seconds and return whatever it sees then. Because performance has an impact on page rankings, it's highly recommended to signal Phantom-Snatch page-readyness instead of relying on a timeout.
 
 ### Nginx as snapshot proxy
 

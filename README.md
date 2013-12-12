@@ -80,15 +80,15 @@ with headers
 
 ### Controlling snapshots
 
-Rendering Ajax-Pages has one major pitfall: Because of Ajax's asynchronous behaviour, it is hard for the renderer to say when the page is ready for a snapshot. The most robust and performant way to solve this, is to let the page say "I am ready - you can now take your snapshot".
+Rendering Ajax-Pages has one major pitfall: Because of Ajax's asynchronous behaviour, it is hard for the renderer to say when the page is ready for a snapshot. The most robust and performant way to solve this, is to let the page actively signal that it's ready.
 
-Phantom-Snatch will assume that a page is ready when it sees the attribute data-status="ready" in the body tag:
+You can signal Phantom-Snatch that the page is ready by setting the attribute data-status in the body tag to "ready":
 
 ```
 <body data-status="ready">
 ```
 
-As soon as Phantom-Snatch sees this, it will take the snapshot and write its response. If PhantomJS never sees this, it will take a snapshot after 5 seconds and return it. Because performance has an impact on page rankings, it's highly recommended to signal Phantom-Snatch page-readyness instead of relying on a timout.
+As soon as Phantom-Snatch gets this signal, it will take the snapshot and write its response. If PhantomJS never sees a signal, it will take a snapshot after 5 seconds and return the response. Because performance has an impact on page rankings, it's highly recommended to signal Phantom-Snatch page-readyness instead of relying on a timeout.
 
 ### Nginx as snapshot proxy
 
